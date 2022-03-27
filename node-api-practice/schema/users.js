@@ -8,6 +8,7 @@ const joi =require('joi');
  * max(length) 最大长度
  * required() 值是必填项，不能为 undefined
  * pattern(正则表达式) 值必须符合正则表达式的规则
+ * integer() 整数
  */
 
 /**
