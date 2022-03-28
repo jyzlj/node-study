@@ -19,3 +19,12 @@ exports.deleteArticleCateId = {
     id,
   }
 };
+
+// 更新的校验规则
+exports.updateArticleDetail = {
+  body: {
+    name,
+    alias,
+    id,
+  }
+}

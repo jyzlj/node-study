@@ -6,6 +6,8 @@ const usersRouter = require('./router/users.js');
 const usersInfoRouter = require('./router/usersInfo.js');
 // 导入文章类别模块
 const articleCateRouter = require('./router/articleCate.js');
+// 导入文章模块
+const articleRouter = require('./router/article.js');
 
 // 导入配置文件
 const config = require('./config.js');
@@ -48,6 +50,7 @@ app.use(expressJWT({ secret: config.jwtSecretKey, algorithms: ['HS256'] }).unles
 app.use('/api', usersRouter);
 app.use('/my', usersInfoRouter);
 app.use('/my/article', articleCateRouter);
+app.use('/my/article', articleRouter);
 
 // 错误中间件
 app.use((err, req, res, next)=> {

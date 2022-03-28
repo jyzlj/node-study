@@ -6,7 +6,7 @@ const expressJoi = require('@escook/express-joi')
 
 const router = express.Router();
 
-const { addArticleCate, deleteArticleCateId } = require('../schema/cate')
+const { addArticleCate, deleteArticleCateId, updateArticleDetail } = require('../schema/cate')
 
 // 获取文章分类列表
 router.get('/cates', articleCate.getArticleData);
@@ -18,6 +18,9 @@ router.post('/addCates', expressJoi(addArticleCate), articleCate.addArticleCate)
 router.get('/deleteCate/:id', expressJoi(deleteArticleCateId), articleCate.deleteArticleCate);
 
 // 获取文章详情
-router.get('/detailCate/:id',expressJoi(deleteArticleCateId), articleCate.getCateDetail)
+router.get('/detailCate/:id', expressJoi(deleteArticleCateId), articleCate.getCateDetail);
+
+// 更新文章详情
+router.post('/updateArticleCate', expressJoi(updateArticleDetail), articleCate.updateArticleCate);
 
 module.exports = router;
