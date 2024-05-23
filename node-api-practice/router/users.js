@@ -13,4 +13,7 @@ router.post('/register', expressJoi(reg_login_schema), usersHandle.register);
 // 登录
 router.post('/login', expressJoi(reg_login_schema), usersHandle.login);
 
+// 注销
+router.post('/logout', expressJoi(reg_login_schema), usersHandle.logout);
+
 module.exports = router;

@@ -76,3 +76,10 @@ exports.login = (req, res) => {
     });
   })
 };
+
+// 注销
+export const logout = (req, res) => {
+  req.session.user = null;
+  req.session.islogin = false;
+  res.send({ msg: '注销成功', status: 200 });
+}
